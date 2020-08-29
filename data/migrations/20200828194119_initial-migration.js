@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-  await knex.schema
+  return knex.schema
     .createTable("project", (table) => {
         table.increments();
         table.string("project_name", 128)
@@ -12,14 +12,14 @@ exports.up = function(knex) {
             .defaultTo(false);
     })
     .createTable("resource", (table) => {
-        table.incremenets();
-        table.string("resource-name", 128)
+        table.increments();
+        table.string("resource_name", 128)
             .unique()
             .notNullable();
         table.text("resource_description");
   })
     .createTable("task", (table) => {
-        table.incremenets();
+        table.increments();
         table.text("task_description")
             .notNullable();
         table.text("notes");

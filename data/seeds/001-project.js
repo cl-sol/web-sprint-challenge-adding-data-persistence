@@ -5,8 +5,8 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('project').insert([
-        {project_name: "wash car", description: "wash and vacuum car"},
-        {project_name: "organize albums", description: "sort albums by artist name"}
+        {project_name: "wash car", project_description: "wash and vacuum car"},
+        {project_name: "organize albums", project_description: "sort albums by artist name"}
       ]);
     });
 };
