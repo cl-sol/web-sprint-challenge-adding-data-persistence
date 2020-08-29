@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
         })
         .catch(err => {
             res.status(500).json({
-                message: "Failed to load resourcess"
+                message: "Failed to load resources"
             });
         });
 });
@@ -23,7 +23,7 @@ router.get("/:id", (req, res) => {
                 res.status(resource)
             } else {
                 res.status(404).json({
-                    message: "Could not find resouce"
+                    message: "Could not find resource"
                 });
             }
         })

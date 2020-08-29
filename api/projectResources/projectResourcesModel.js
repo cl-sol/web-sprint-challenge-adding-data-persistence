@@ -2,10 +2,8 @@ const db = require("../../data/config");
 
 module.exports = {
     findProjectResources,
-    findResourcesById,
-    addResource
 }
 
-function findResources() {
+function findProjectResources() {
     return db("project_resources");
 };

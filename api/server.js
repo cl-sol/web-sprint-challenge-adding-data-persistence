@@ -1,10 +1,10 @@
 const express = require("express");
 const server = express();
 
-const projectRouter = require("");
-const resourceRouter = requite("");
-const taskRouter = require("");
-const projectResourcesRouter = require("");
+const projectRouter = require("./project/projectRouter");
+const resourceRouter = require("./resource/resourceRouter");
+const taskRouter = require("./task/taskResource");
+const projectResourcesRouter = require("./projectResources/projectResourcesRouter");
 
 server.use(express.json());
 server.use("/api/project", projectRouter);
