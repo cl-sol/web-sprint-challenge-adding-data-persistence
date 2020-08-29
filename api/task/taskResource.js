@@ -1,15 +1,15 @@
 const express = require("express");
-const Resource = require("./resourceModel");
+const Task = require("./taskModel");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    Resource.findResources()
-        .then(resources => {
-            res.json(resources);
+    Task.findTask()
+        .then(task => {
+            res.json(task);
         })
         .catch(err => {
             res.status(500).json({
-                message: "Failed to load resourcess"
+                message: "Failed to load tasks"
             });
         });
 });
@@ -17,33 +17,33 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
     const { id } = req.params;
 
-    Router.findResourcesById(id)
-        .then(resource => {
-            if(resource) {
-                res.status(resource)
+    Router.findTasksById(id)
+        .then(task => {
+            if(task) {
+                res.status(task)
             } else {
                 res.status(404).json({
-                    message: "Could not find resouce"
+                    message: "Could not find task"
                 });
             }
         })
         .catch(err => {
             res.status(500).json({
-                message: "Failed to load resource"
+                message: "Failed to load task"
             });
         });
 });
 
 router.post("/", (req, res) => {
-    const newResource = req.body;
+    const newTask = req.body;
 
-    Project.addProject(newResource)
-        .then(resource => {
-            res.status(201).json(resource);
+    Project.addProject(newTask)
+        .then(task => {
+            res.status(201).json(task);
         })
         .catch(err => {
             res.status(500).json({
-                message: "Failed to add resource"
+                message: "Failed to add task"
             });
         });
 });
