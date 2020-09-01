@@ -8,6 +8,7 @@ router.get("/", (req, res) => {
             res.json(task);
         })
         .catch(err => {
+            console.log(err)
             res.status(500).json({
                 message: "Failed to load tasks"
             });
